@@ -26,7 +26,7 @@ static float mlx90640To[768];
 float eTa;
 // static uint16_t data[768*sizeof(float)];
 
-//extern "C" 
+extern "C" { 
 int setup(int fps){
 	MLX90640_SetDeviceMode(MLX_I2C_ADDR, 0);
 	MLX90640_SetSubPageRepeat(MLX_I2C_ADDR, 0);
@@ -74,13 +74,15 @@ int setup(int fps){
 
 	return 0;
 }
+}
 
-//extern "C" 
+extern "C" {
 void cleanup(void){
 	//nothing...
 }
+}
 
-//extern "C" 
+extern "C" {
 float * get_frame(void){
 	int retries = 6;
 	int subpage;
@@ -117,4 +119,5 @@ float * get_frame(void){
 #endif
 
 	return mlx90640To;
+}
 }

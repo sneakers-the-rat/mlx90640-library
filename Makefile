@@ -18,7 +18,7 @@ ifeq ($(I2C_MODE), LINUX)
 	I2C_LIBS =
 endif
 
-all: libMLX90640_API.a libMLX90640_API.so examples
+all: libMLX90640_API.a libMLX90640_API.so
 
 examples: $(examples_output)
 
